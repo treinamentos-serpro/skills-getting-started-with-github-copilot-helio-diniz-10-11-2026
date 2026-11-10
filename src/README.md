@@ -6,6 +6,7 @@ Uma aplicação FastAPI super simples que permite que estudantes visualizem e se
 
 - Visualizar todas as atividades extracurriculares disponíveis
 - Inscrever-se em atividades
+- Cancelar a inscrição em atividades
 
 ## Primeiros Passos
 
@@ -31,6 +32,7 @@ Uma aplicação FastAPI super simples que permite que estudantes visualizem e se
 | ------ | ----------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Obtém todas as atividades com seus detalhes e contagem atual de participantes |
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Inscreve-se em uma atividade                                                |
+| DELETE | `/activities/{activity_name}/signup?email=student@mergington.edu` | Cancela a inscrição em uma atividade                                        |
 
 ## Modelo de Dados
 
@@ -48,3 +50,17 @@ A aplicação usa um modelo de dados simples com identificadores significativos:
    - Série/Ano escolar
 
 Todos os dados são armazenados em memória, o que significa que os dados serão resetados quando o servidor reiniciar.
+
+## Testes
+
+Instale as dependências do projeto, incluindo `pytest`:
+
+```
+pip install -r requirements.txt
+```
+
+Execute os testes da API a partir da raiz do repositório:
+
+```
+pytest
+```
